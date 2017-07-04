@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Iul 2017 la 14:24
+-- Generation Time: 04 Iul 2017 la 17:02
 -- Versiune server: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -56,6 +56,15 @@ CREATE TABLE `t_note` (
   `Nota` int(21) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Salvarea datelor din tabel `t_note`
+--
+
+INSERT INTO `t_note` (`Elev_ID`, `Materie_ID`, `Nota`) VALUES
+(5, 22, 10),
+(5, 22, 10),
+(12, 22, 8);
+
 -- --------------------------------------------------------
 
 --
@@ -104,3 +113,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
