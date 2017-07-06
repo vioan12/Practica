@@ -44,7 +44,7 @@ public class t_elevi {
     public String getAdresa(){
        return this.Adresa;
     }
-    public String setTelefon(){
+    public String getTelefon(){
        return this.Telefon;
     }
 
