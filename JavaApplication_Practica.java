@@ -7,6 +7,7 @@
 package javaapplication_practica;
 import java.sql.*;
 import java.util.*;
+import java.io.*;
 
 /**
  *
@@ -51,10 +52,11 @@ public class JavaApplication_Practica {
         list.add(x);
       }
       st.close();
+      PrintWriter writer = new PrintWriter("out.txt", "UTF-8");      
       // print the results
       for(i=0;i<list.size();i++)
-        System.out.format("%s, %s, %s, %s, %s\n", list.get(i).getID(), list.get(i).getNume(),list.get(i).getPrenume(),list.get(i).getAdresa(),list.get(i).getTelefon());
-      
+        writer.printf("%s, %s, %s, %s, %s\n", list.get(i).getID(), list.get(i).getNume(),list.get(i).getPrenume(),list.get(i).getAdresa(),list.get(i).getTelefon());
+      writer.close();
     }
     catch (Exception e)
     {
@@ -65,3 +67,4 @@ public class JavaApplication_Practica {
     }
     
 }
+
