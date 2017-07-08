@@ -18,10 +18,10 @@ public class JavaApplication_Practica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        controller control=new controller();
-        control.televi();
-        control.televi_afisare("t_elevi.txt");
-        control.televi_xml("t_elevi.xml");
+        controller_t_elevi control=new controller_t_elevi();
+        control.loaddata();
+        control.afisare_txt("t_elevi.txt");
+        control.afisare_xml("t_elevi.xml");
     }
     
 }
