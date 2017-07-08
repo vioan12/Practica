@@ -15,15 +15,16 @@ import java.io.*;
 public class controller {
     
     protected ArrayList<t_elevi> list_televi = new ArrayList<t_elevi>();
+    protected String myDriver = "org.gjt.mm.mysql.Driver";
+    protected String myUrl = "jdbc:mysql://localhost:3306/practica";
     public void televi()
     {
         try
         {
-          // create our mysql database connection
-          String myDriver = "org.gjt.mm.mysql.Driver";
-          String myUrl = "jdbc:mysql://localhost:3306/practica";
           Class.forName(myDriver);
           Connection conn = DriverManager.getConnection(myUrl, "root", "");
+          // create our mysql database connection
+
           // our SQL SELECT query. 
           // if you only need a few columns, specify them by name instead of using "*"
           String query = "SELECT * FROM t_elevi";
