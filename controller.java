@@ -7,6 +7,16 @@ package javaapplication_practica;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import java.io.File;
+import org.w3c.dom.Element;
 
 /**
  *
@@ -67,6 +77,69 @@ public class controller {
         }
         catch (Exception e)
         {
+          System.err.println("Got an exception! ");
+          System.err.println(e.getMessage());
+        }
+    }
+    
+    public void televi_xml(String filename)
+    {
+        try{
+            int i;
+            DocumentBuilderFactory dbFactory =
+            DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = 
+               dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.newDocument();
+            // root element
+            Element rootElement = doc.createElement("t_elevi");
+            doc.appendChild(rootElement);
+            for(i=0;i<list_televi.size();i++){
+                //  supercars element
+                Element elev = doc.createElement("elev");
+                rootElement.appendChild(elev);
+
+                // setting attribute to element
+                Attr attr = doc.createAttribute("ID");
+                attr.setValue(Integer.toString(list_televi.get(i).getID()));
+                elev.setAttributeNode(attr);
+
+                // Nume element
+                Element nume = doc.createElement("Nume");
+                nume.appendChild(
+                doc.createTextNode(list_televi.get(i).getNume()));
+                elev.appendChild(nume);
+                
+                // Prenume element
+                Element prenume = doc.createElement("Prenume");
+                prenume.appendChild(
+                doc.createTextNode(list_televi.get(i).getPrenume()));
+                elev.appendChild(prenume);
+                
+                // Adresa element
+                Element adresa = doc.createElement("Adresa");
+                adresa.appendChild(
+                doc.createTextNode(list_televi.get(i).getAdresa()));
+                elev.appendChild(adresa);
+                
+                // Telefon element
+                Element telefon = doc.createElement("Telefon");
+                telefon.appendChild(
+                doc.createTextNode(list_televi.get(i).getTelefon()));
+                elev.appendChild(telefon);
+            }
+
+            // write the content into xml file
+            TransformerFactory transformerFactory =
+            TransformerFactory.newInstance();
+            Transformer transformer =
+            transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result =
+            new StreamResult(new File(filename));
+            transformer.transform(source, result);
+        }
+        catch (Exception e){
           System.err.println("Got an exception! ");
           System.err.println(e.getMessage());
         }
