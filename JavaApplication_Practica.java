@@ -5,9 +5,6 @@
  */
 
 package javaapplication_practica;
-import java.sql.*;
-import java.util.*;
-import java.io.*;
 
 /**
  *
