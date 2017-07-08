@@ -1,0 +1,198 @@
+Root element :t_elevi
+----------------------------
+
+Current Element :elev
+ID : 1
+Nume : Mihail
+Prenume : Emilia
+Adresa : 2404 Confederate Drive
+Telefon : 07700900475
+
+Current Element :elev
+ID : 2
+Nume : Ianculescu
+Prenume : Eugenia
+Adresa : 1031 Emerson Road
+Telefon : 07700 900152
+
+Current Element :elev
+ID : 3
+Nume : Urzica
+Prenume : Ionel
+Adresa : 154 Eden Drive
+Telefon : 07700 900680
+
+Current Element :elev
+ID : 4
+Nume : Istrati
+Prenume : Georgiana
+Adresa : 1762 Anthony Avenue
+Telefon : 07700 900696
+
+Current Element :elev
+ID : 5
+Nume : Vasile
+Prenume : Stefan
+Adresa : 4709 Roguski Road
+Telefon : 07700 900848
+
+Current Element :elev
+ID : 6
+Nume : Pop
+Prenume : Anatolie
+Adresa : 2082 Pooh Bear Lane
+Telefon : 07700 900752
+
+Current Element :elev
+ID : 7
+Nume : Marin
+Prenume : Sonia
+Adresa : 3234 Quincy Street
+Telefon : 0141 496 0196
+
+Current Element :elev
+ID : 8
+Nume : Iliescu
+Prenume : Felicia
+Adresa : 1401 Lilac Lane
+Telefon : 029 2018 0442
+
+Current Element :elev
+ID : 9
+Nume : Alexandrescu
+Prenume : Iulian
+Adresa : 497 Nickel Road
+Telefon : 0121 496 0690
+
+Current Element :elev
+ID : 10
+Nume : Fidatov
+Prenume : Valerian
+Adresa : 3319 Francis Mine
+Telefon : 0114 496 0718
+
+Current Element :elev
+ID : 11
+Nume : Cocis
+Prenume : Iuliu
+Adresa : 4131 Timbercrest Road
+Telefon : 0117 496 0254
+
+Current Element :elev
+ID : 12
+Nume : Stefanescu
+Prenume : Cecilia
+Adresa : 1538 Webster Street
+Telefon : 0191 498 0092
+
+Current Element :elev
+ID : 13
+Nume : Nicolae
+Prenume : Horia
+Adresa : 3693 Red Hawk Road
+Telefon : 0131 496 0526
+
+Current Element :elev
+ID : 14
+Nume : Teodorescu
+Prenume : Natalia
+Adresa : 763 River Road
+Telefon : 029 2018 0822
+
+Current Element :elev
+ID : 15
+Nume : Vladimirescu
+Prenume : Adelina
+Adresa : 2124 Walt Nuzum Farm Road
+Telefon : 0151 496 0268
+
+Current Element :elev
+ID : 16
+Nume : Muresanu
+Prenume : Aurel
+Adresa : 3441 Heliport Loop
+Telefon : 020 7946 0753
+
+Current Element :elev
+ID : 17
+Nume : Negrescu
+Prenume : Valentina
+Adresa : 2687 Prudence Street
+Telefon : 020 7946 0831
+
+Current Element :elev
+ID : 18
+Nume : Puscas
+Prenume : Miron
+Adresa : 693 Lighthouse Drive
+Telefon : 020 7946 0537
+
+Current Element :elev
+ID : 19
+Nume : Ionescu
+Prenume : Marina
+Adresa : 4707 Eagle Drive
+Telefon : 0161 496 0488
+
+Current Element :elev
+ID : 20
+Nume : Savu
+Prenume : Vasilica
+Adresa : 1600 Hayhurst Lane
+Telefon : 0118 496 0741
+
+Current Element :elev
+ID : 21
+Nume : Iordache
+Prenume : Bianca
+Adresa : 4236 Brooklyn Street
+Telefon : 0151 496 0606
+
+Current Element :elev
+ID : 22
+Nume : Tilea
+Prenume : Laurensiu
+Adresa : 4257 Wescam Court
+Telefon : 0115 496 0734
+
+Current Element :elev
+ID : 23
+Nume : Georghiou
+Prenume : Tiberiu
+Adresa : 919 Francis Mine
+Telefon : 0114 496 0706
+
+Current Element :elev
+ID : 24
+Nume : Dragan
+Prenume : Ecaterina
+Adresa : 4911 Snowbird Lane
+Telefon : 0115 496 0144
+
+Current Element :elev
+ID : 25
+Nume : Ceausescu
+Prenume : Dinu
+Adresa : 856 Flynn Street
+Telefon : 0117 496 0739
+
+Current Element :elev
+ID : 26
+Nume : Nistor
+Prenume : Daniel
+Adresa : 649 Prospect Street
+Telefon : 0116 496 0743
+
+Current Element :elev
+ID : 27
+Nume : Raducan
+Prenume : Madalina
+Adresa : 566 Austin Secret Lane
+Telefon : 0191 498 0578
+
+Current Element :elev
+ID : 28
+Nume : Vasilescu
+Prenume : Diana
+Adresa : 377 Barfield Lane
+Telefon : 0141 496 0196
