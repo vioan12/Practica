@@ -21,6 +21,7 @@ public class JavaApplication_Practica {
         controller control=new controller();
         control.televi();
         control.televi_afisare("t_elevi.txt");
+        control.televi_xml("t_elevi.xml");
     }
     
 }
