@@ -18,6 +18,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
+import java.io.*;
 
 /**
  *
@@ -66,50 +67,52 @@ public class controller_t_elevi {
         }
     }
     
-    public void afisare_txt(String filename)
+    public void afisare_txt(String filenamefrom, String filenameto)
     {
         int i;
         try{	
-            File inputFile = new File(filename);
+            File inputFile = new File(filenamefrom);
+            PrintWriter writer = new PrintWriter(filenameto, "UTF-8"); 
             DocumentBuilderFactory dbFactory 
                = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
-            System.out.println("Root element :" 
+            writer.printf("Root element :" 
                + doc.getDocumentElement().getNodeName());
-            NodeList nList = doc.getElementsByTagName("student");
-            System.out.println("----------------------------");
+            NodeList nList = doc.getElementsByTagName("elev");
+            writer.printf("\n----------------------------");
             for (int temp = 0; temp < nList.getLength(); temp++) {
                Node nNode = nList.item(temp);
-               System.out.println("\nCurrent Element :" 
+               writer.printf("\n\nCurrent Element :" 
                   + nNode.getNodeName());
                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                   Element eElement = (Element) nNode;
-                  System.out.println("Student roll no : " 
-                     + eElement.getAttribute("rollno"));
-                  System.out.println("First Name : " 
+                  writer.printf("\nID : " 
+                     + eElement.getAttribute("ID"));
+                  writer.printf("\nNume : " 
                      + eElement
-                     .getElementsByTagName("firstname")
+                     .getElementsByTagName("Nume")
                      .item(0)
                      .getTextContent());
-                  System.out.println("Last Name : " 
+                  writer.printf("\nPrenume : " 
                   + eElement
-                     .getElementsByTagName("lastname")
+                     .getElementsByTagName("Prenume")
                      .item(0)
                      .getTextContent());
-                  System.out.println("Nick Name : " 
+                  writer.printf("\nAdresa : " 
                   + eElement
-                     .getElementsByTagName("nickname")
+                     .getElementsByTagName("Adresa")
                      .item(0)
                      .getTextContent());
-                  System.out.println("Marks : " 
+                  writer.printf("\nTelefon : " 
                   + eElement
-                     .getElementsByTagName("marks")
+                     .getElementsByTagName("Telefon")
                      .item(0)
                      .getTextContent());
             }
          }
+            writer.close();
         }
         catch (Exception e)
         {
