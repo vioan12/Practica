@@ -20,8 +20,9 @@ public class JavaApplication_Practica {
     public static void main(String[] args) {
         controller_t_elevi control=new controller_t_elevi();
         control.loaddata();
-        control.afisare_txt("t_elevi.txt");
         control.afisare_xml("t_elevi.xml");
+        control.afisare_txt("t_elevi.xml","t_elevi.txt");
+
     }
     
 }
