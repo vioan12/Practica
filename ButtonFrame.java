@@ -15,13 +15,15 @@ import javax.swing.*;
 public class ButtonFrame extends JFrame implements ActionListener{
         JButton b1 ; // reference to the button object
         JButton b2 ;
-        controller_t_elevi control=new controller_t_elevi();
+        JButton b3 ;
+        controller_t_elevi t_elevi=new controller_t_elevi();
 
         ButtonFrame(String title)
         {
             super( title );                   // invoke the JFrame constructor
             setLayout( new FlowLayout() );    // set the layout manager
             JLabel l1 = new JLabel("t_elevi");
+            
             b1 = new JButton("to xml");
             b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -35,19 +37,34 @@ public class ButtonFrame extends JFrame implements ActionListener{
                     b2ActionPerformed(evt);
                 }
             });
-            control.loaddata();
+            
+            b3 = new JButton("interogare SQL");
+            b3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b3ActionPerformed(evt);
+                }
+            });
+            
+            t_elevi.loaddata();
             add(l1);
             add( b1 );
             add( b2 );
+            add( b3 );
+
             setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         }
         
         private void b1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            control.afisare_xml("t_elevi.xml");
+            t_elevi.afisare_xml("t_elevi.xml");
         }
         
         private void b2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            control.afisare_pdf("t_elevi.xml","t_elevi.pdf");
+            t_elevi.afisare_pdf("t_elevi.xml","t_elevi.pdf");
+        }
+        
+        private void b3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_elevi.sql_adaugare("t_elevi.txt");
+            t_elevi.loaddata();
         }
 
     @Override
