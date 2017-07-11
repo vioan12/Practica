@@ -20,6 +20,8 @@ public class JavaApplication_Practica {
     /**
      * @param args the command line arguments
      */
+    public static database_management db = new database_management();
+    
     public static void main(String[] args) {
         ButtonFrame frm = new ButtonFrame("List of Buttons");
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
