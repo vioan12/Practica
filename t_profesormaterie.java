@@ -24,5 +24,9 @@ public class t_profesormaterie {
     }
     public int getMaterie_ID(){
        return this.Materie_ID;
-    } 
+    }
+    public void setAll(int value, int value1){
+        this.Profesor_ID=value;
+        this.Materie_ID=value1;
+    }
 }
