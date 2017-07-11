@@ -176,4 +176,32 @@ public class controller_t_elevi {
           System.err.println(e.getMessage());
         }
     }
+    
+    public void sql_adaugare(String filename)
+    {
+        String sql = "INSERT INTO `t_elevi` (`ID`, `Nume`, `Prenume`, `Adresa`, `Telefon`) VALUES";
+        BufferedReader br = null;
+        FileReader fr = null;
+	try {
+                
+            fr = new FileReader(filename);
+            br = new BufferedReader(fr);
+            String sCurrentLine;
+            br = new BufferedReader(new FileReader(filename));
+            while ((sCurrentLine = br.readLine()) != null) {
+                sql = sql.concat(" ");
+                sql = sql.concat(sCurrentLine);
+            }
+            int rs=javaapplication_practica.JavaApplication_Practica.db.execute_update(sql);
+            if (br != null)
+                br.close();
+            if (fr != null)
+		fr.close();
+
+        }
+        catch (Exception e){
+          System.err.println("Got an exception! ");
+          System.err.println(e.getMessage());
+        }
+    }
 }
