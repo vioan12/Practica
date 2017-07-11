@@ -29,26 +29,11 @@ import java.io.*;
 public class controller_t_elevi {
     
     protected ArrayList<t_elevi> list_televi = new ArrayList<t_elevi>();
-    protected String myDriver = "org.gjt.mm.mysql.Driver";
-    protected String myUrl = "jdbc:mysql://localhost:3306/practica";
     public void loaddata()
     {
         try
         {
-          Class.forName(myDriver);
-          Connection conn = DriverManager.getConnection(myUrl, "root", "");
-          // create our mysql database connection
-
-          // our SQL SELECT query. 
-          // if you only need a few columns, specify them by name instead of using "*"
-          String query = "SELECT * FROM t_elevi";
-
-          // create the java statement
-          Statement st = conn.createStatement();
-
-          // execute the query, and get a java resultset
-          ResultSet rs = st.executeQuery(query);
-
+           ResultSet rs=javaapplication_practica.JavaApplication_Practica.db.execute_query("SELECT * FROM t_elevi");
           // iterate through the java resultset
           while (rs.next())
           {
@@ -60,7 +45,6 @@ public class controller_t_elevi {
             x.setTelefon(rs.getString("Telefon"));
             list_televi.add(x);
           }
-          st.close();
         }
         catch (Exception e)
         {
