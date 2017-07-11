@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package javaapplication_practica;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.sql.*;
 import java.util.*;
 import javax.xml.transform.Transformer;
@@ -67,52 +69,57 @@ public class controller_t_elevi {
         }
     }
     
-    public void afisare_txt(String filenamefrom, String filenameto)
+    public void afisare_pdf(String filenamefrom, String filenameto)
     {
         int i;
         try{	
             File inputFile = new File(filenamefrom);
-            PrintWriter writer = new PrintWriter(filenameto, "UTF-8"); 
             DocumentBuilderFactory dbFactory 
                = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
-            writer.printf("Root element :" 
-               + doc.getDocumentElement().getNodeName());
+            com.itextpdf.text.Document document = new com.itextpdf.text.Document();
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filenameto));
+            writer.setPdfVersion(PdfWriter.VERSION_1_7);
+            document.open();
+            document.add(new Paragraph("Root element :" 
+               + doc.getDocumentElement().getNodeName()));
             NodeList nList = doc.getElementsByTagName("elev");
-            writer.printf("\n----------------------------");
+            document.add(new Paragraph("----------------------------"));
+            document.add(new Paragraph("\n"));
             for (int temp = 0; temp < nList.getLength(); temp++) {
                Node nNode = nList.item(temp);
-               writer.printf("\n\nCurrent Element :" 
-                  + nNode.getNodeName());
+               document.add(new Paragraph("Current Element :" 
+                  + nNode.getNodeName()));
                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                   Element eElement = (Element) nNode;
-                  writer.printf("\nID : " 
-                     + eElement.getAttribute("ID"));
-                  writer.printf("\nNume : " 
+                  document.add(new Paragraph("ID : " 
+                     + eElement.getAttribute("ID")));
+                  document.add(new Paragraph("Nume : " 
                      + eElement
                      .getElementsByTagName("Nume")
                      .item(0)
-                     .getTextContent());
-                  writer.printf("\nPrenume : " 
+                     .getTextContent()));
+                  document.add(new Paragraph("Prenume : " 
                   + eElement
                      .getElementsByTagName("Prenume")
                      .item(0)
-                     .getTextContent());
-                  writer.printf("\nAdresa : " 
+                     .getTextContent()));
+                  document.add(new Paragraph("Adresa : " 
                   + eElement
                      .getElementsByTagName("Adresa")
                      .item(0)
-                     .getTextContent());
-                  writer.printf("\nTelefon : " 
+                     .getTextContent()));
+                  document.add(new Paragraph("Telefon : " 
                   + eElement
                      .getElementsByTagName("Telefon")
                      .item(0)
-                     .getTextContent());
+                     .getTextContent()));
+                  document.add(new Paragraph("\n"));
             }
          }
-            writer.close();
+            document.close();        
         }
         catch (Exception e)
         {
@@ -184,4 +191,3 @@ public class controller_t_elevi {
         }
     }
 }
-
