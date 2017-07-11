@@ -39,11 +39,7 @@ public class controller_t_elevi {
             while (rs.next())
             {
               t_elevi x=new t_elevi();
-              x.setID(rs.getInt("ID"));
-              x.setNume(rs.getString("Nume"));
-              x.setPrenume(rs.getString("Prenume"));
-              x.setAdresa(rs.getString("Adresa"));
-              x.setTelefon(rs.getString("Telefon"));
+              x.setAll(rs.getInt("ID"), rs.getString("Nume"), rs.getString("Prenume"), rs.getString("Adresa"), rs.getString("Telefon"));
               list_televi.add(x);
             }
           }
