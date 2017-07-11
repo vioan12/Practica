@@ -6,6 +6,9 @@
 
 package javaapplication_practica;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Ioan
@@ -19,7 +22,10 @@ public class JavaApplication_Practica {
      */
     public static void main(String[] args) {
         ButtonFrame frm = new ButtonFrame("List of Buttons");
-        frm.setSize( 200, 100 );
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        frm.setSize( 300, 80 );
+        frm.setResizable(false);
+        frm.setLocation(dim.width/2-frm.getSize().width/2, dim.height/2-frm.getSize().height/2);
         frm.setVisible( true );
     }
     
