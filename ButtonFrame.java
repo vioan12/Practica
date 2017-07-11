@@ -28,7 +28,7 @@ public class ButtonFrame extends JFrame implements ActionListener{
                 }
             });
             
-            b2 = new JButton("t_elevi to pdf");
+            b2 = new JButton("t_elevi xml to pdf");
             b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                     b2ActionPerformed(evt);
@@ -53,3 +53,4 @@ public class ButtonFrame extends JFrame implements ActionListener{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+
