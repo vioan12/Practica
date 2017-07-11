@@ -35,15 +35,17 @@ public class controller_t_elevi {
         {
            ResultSet rs=javaapplication_practica.JavaApplication_Practica.db.execute_query("SELECT * FROM t_elevi");
           // iterate through the java resultset
-          while (rs.next())
-          {
-            t_elevi x=new t_elevi();
-            x.setID(rs.getInt("ID"));
-            x.setNume(rs.getString("Nume"));
-            x.setPrenume(rs.getString("Prenume"));
-            x.setAdresa(rs.getString("Adresa"));
-            x.setTelefon(rs.getString("Telefon"));
-            list_televi.add(x);
+          if(rs!=null){
+            while (rs.next())
+            {
+              t_elevi x=new t_elevi();
+              x.setID(rs.getInt("ID"));
+              x.setNume(rs.getString("Nume"));
+              x.setPrenume(rs.getString("Prenume"));
+              x.setAdresa(rs.getString("Adresa"));
+              x.setTelefon(rs.getString("Telefon"));
+              list_televi.add(x);
+            }
           }
         }
         catch (Exception e)
