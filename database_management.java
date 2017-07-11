@@ -38,14 +38,14 @@ public class database_management {
     {
         try{
         // execute the query, and get a java resultset
-            ResultSet rs = st.executeQuery(query);
+            ResultSet rs = st.executeQuery(query);  
             return rs;
         }
         catch (Exception e)
         {
           System.err.println("Got an exception! ");
           System.err.println(e.getMessage());
-          return (ResultSet)null;          
+          return null;          
         }
     }
 }
