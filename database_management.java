@@ -48,4 +48,19 @@ public class database_management {
           return null;          
         }
     }
+    
+        public int execute_update(String update)
+    {
+        try{
+        // execute the query, and get a java resultset
+            int rs = st.executeUpdate(update);
+            return rs;
+        }
+        catch (Exception e)
+        {
+          System.err.println("Got an exception! ");
+          System.err.println(e.getMessage());
+          return 0;          
+        }
+    }
 }
