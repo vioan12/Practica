@@ -18,10 +18,9 @@ public class JavaApplication_Practica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        controller_t_elevi control=new controller_t_elevi();
-        control.loaddata();
-        control.afisare_xml("t_elevi.xml");
-        control.afisare_pdf("t_elevi.xml","t_elevi.pdf");
+        ButtonFrame frm = new ButtonFrame("List of Buttons");
+        frm.setSize( 200, 100 );
+        frm.setVisible( true );
     }
     
 }
