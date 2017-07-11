@@ -32,4 +32,9 @@ public class t_note {
     public int getNota(){
        return this.Nota;
     }
+    public void setAll(int value, int value1, int value2){
+        this.Elev_ID=value;
+        this.Materie_ID=value1;
+        this.Nota=value2;
+    }
 }
