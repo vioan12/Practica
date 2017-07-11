@@ -47,5 +47,11 @@ public class t_elevi {
     public String getTelefon(){
        return this.Telefon;
     }
-
+    public void setAll(int value, String value1, String value2, String value3, String value4){
+        this.ID=value;
+        this.Nume=value1;
+        this.Prenume=value2;
+        this.Adresa=value3;
+        this.Telefon=value4;
+    }
 }
