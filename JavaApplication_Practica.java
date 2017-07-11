@@ -25,7 +25,7 @@ public class JavaApplication_Practica {
     public static void main(String[] args) {
         ButtonFrame frm = new ButtonFrame("List of Buttons");
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        frm.setSize( 300, 80 );
+        frm.setSize( 400, 80 );
         frm.setResizable(false);
         frm.setLocation(dim.width/2-frm.getSize().width/2, dim.height/2-frm.getSize().height/2);
         frm.setVisible( true );
