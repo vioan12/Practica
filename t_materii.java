@@ -39,4 +39,10 @@ public class t_materii {
     public String getDescriere(){
        return this.Descriere;
     }
+    public void setAll(int value, String value1, int value2, String value3){
+        this.ID=value;
+        this.Nume=value1;
+        this.Ore=value2;
+        this.Descriere=value3;
+    }
 }
