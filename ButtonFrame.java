@@ -21,20 +21,22 @@ public class ButtonFrame extends JFrame implements ActionListener{
         {
             super( title );                   // invoke the JFrame constructor
             setLayout( new FlowLayout() );    // set the layout manager
-            b1 = new JButton("t_elevi to xml");
+            JLabel l1 = new JLabel("t_elevi");
+            b1 = new JButton("to xml");
             b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                     b1ActionPerformed(evt);
                 }
             });
             
-            b2 = new JButton("t_elevi xml to pdf");
+            b2 = new JButton("xml to pdf");
             b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                     b2ActionPerformed(evt);
                 }
             });
             control.loaddata();
+            add(l1);
             add( b1 );
             add( b2 );
             setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
@@ -53,4 +55,3 @@ public class ButtonFrame extends JFrame implements ActionListener{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-
