@@ -46,4 +46,11 @@ public class t_profesori {
     public String getStudii(){
        return this.Studii;
     }
+    public void setAll(int value, String value1, String value2, String value3, String value4){
+        this.ID=value;
+        this.Nume=value1;
+        this.Prenume=value2;
+        this.Telefon=value3;
+        this.Studii=value4;
+    }
 }
