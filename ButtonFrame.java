@@ -22,9 +22,18 @@ public class ButtonFrame extends JFrame implements ActionListener{
         JButton b7 ;
         JButton b8 ;
         JButton b9 ;
+        JButton b10 ;
+        JButton b11 ;
+        JButton b12 ;
+        JButton b13 ;
+        JButton b14 ;
+        JButton b15 ;
+        JPanel pMeasure = new JPanel();
         controller_t_elevi t_elevi=new controller_t_elevi();
         controller_t_materii t_materii=new controller_t_materii();
         controller_t_note t_note=new controller_t_note();
+        controller_t_profesori t_profesori= new controller_t_profesori();
+        controller_t_profesormaterie t_profesormaterie=new controller_t_profesormaterie();
 
         ButtonFrame(String title)
         {
@@ -33,6 +42,9 @@ public class ButtonFrame extends JFrame implements ActionListener{
             JLabel l1 = new JLabel("t_elevi");
             JLabel l2 = new JLabel("t_materii");
             JLabel l3 = new JLabel("t_note");
+            JLabel l4 = new JLabel("t_profesori");
+            JLabel l5 = new JLabel("t_profesormaterie");
+
             b1 = new JButton("to xml");
             b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,9 +108,54 @@ public class ButtonFrame extends JFrame implements ActionListener{
                 }
             });
             
+            b10 = new JButton("to xml");
+            b10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b10ActionPerformed(evt);
+                }
+            });
+            
+            b11 = new JButton("xml to pdf");
+            b11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b11ActionPerformed(evt);
+                }
+            });
+            
+            b12 = new JButton("interogare SQL");
+            b12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b12ActionPerformed(evt);
+                }
+            });
+            
+            b13 = new JButton("to xml");
+            b13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b13ActionPerformed(evt);
+                }
+            });
+            
+            b14 = new JButton("xml to pdf");
+            b14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b14ActionPerformed(evt);
+                }
+            });
+            
+            b15 = new JButton("interogare SQL");
+            b15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b15ActionPerformed(evt);
+                }
+            });
             t_elevi.loaddata();
             t_materii.loaddata();
             t_note.loaddata();
+            t_profesori.loaddata();
+            t_profesormaterie.loaddata();
+            
+            pMeasure.setLayout(new BoxLayout(pMeasure, BoxLayout.Y_AXIS));
             add(l1);
             add( b1 );
             add( b2 );
@@ -113,6 +170,17 @@ public class ButtonFrame extends JFrame implements ActionListener{
             add( b7 );
             add( b8 );
             add( b9 );
+            
+            add(l4);
+            add( b10 );
+            add( b11 );
+            add( b12 );
+            
+            add(l5);
+            add( b13 );
+            add( b14 );
+            add( b15 );
+
 
             setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         }
@@ -156,6 +224,31 @@ public class ButtonFrame extends JFrame implements ActionListener{
             t_note.loaddata();
         }
 
+        private void b10ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_profesori.afisare_xml("t_profesori.xml");
+        }
+        
+        private void b11ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_profesori.afisare_pdf("t_profesori.xml","t_profesori.pdf");
+        }
+        
+        private void b12ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_profesori.sql_adaugare("t_profesori.txt");
+            t_profesori.loaddata();
+        }
+        
+        private void b13ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_profesormaterie.afisare_xml("t_profesormaterie.xml");
+        }
+        
+        private void b14ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_profesormaterie.afisare_pdf("t_profesormaterie.xml","t_profesormaterie.pdf");
+        }
+        
+        private void b15ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_profesormaterie.sql_adaugare("t_profesormaterie.txt");
+            t_profesormaterie.loaddata();
+        }
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
