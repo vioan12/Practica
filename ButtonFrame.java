@@ -16,14 +16,18 @@ public class ButtonFrame extends JFrame implements ActionListener{
         JButton b1 ; // reference to the button object
         JButton b2 ;
         JButton b3 ;
+        JButton b4 ;
+        JButton b5 ;
+        JButton b6 ;
         controller_t_elevi t_elevi=new controller_t_elevi();
+        controller_t_materii t_materii=new controller_t_materii();
 
         ButtonFrame(String title)
         {
             super( title );                   // invoke the JFrame constructor
             setLayout( new FlowLayout() );    // set the layout manager
             JLabel l1 = new JLabel("t_elevi");
-            
+            JLabel l2 = new JLabel("t_materii");
             b1 = new JButton("to xml");
             b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,11 +49,38 @@ public class ButtonFrame extends JFrame implements ActionListener{
                 }
             });
             
+            b4 = new JButton("to xml");
+            b4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b4ActionPerformed(evt);
+                }
+            });
+            
+            b5 = new JButton("xml to pdf");
+            b5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b5ActionPerformed(evt);
+                }
+            });
+            
+            b6 = new JButton("interogare SQL");
+            b6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    b6ActionPerformed(evt);
+                }
+            });
+            
             t_elevi.loaddata();
+            t_materii.loaddata();
             add(l1);
             add( b1 );
             add( b2 );
             add( b3 );
+            
+            add(l2);
+            add( b4 );
+            add( b5 );
+            add( b6 );
 
             setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         }
@@ -65,6 +96,19 @@ public class ButtonFrame extends JFrame implements ActionListener{
         private void b3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
             t_elevi.sql_adaugare("t_elevi.txt");
             t_elevi.loaddata();
+        }
+        
+        private void b4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_materii.afisare_xml("t_materii.xml");
+        }
+        
+        private void b5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_materii.afisare_pdf("t_materii.xml","t_materii.pdf");
+        }
+        
+        private void b6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            t_materii.sql_adaugare("t_materii.txt");
+            t_materii.loaddata();
         }
 
     @Override
