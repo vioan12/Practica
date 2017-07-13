@@ -13,6 +13,8 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -31,6 +33,8 @@ import org.w3c.dom.NodeList;
  */
 public class controller_t_note {
     protected ArrayList<t_note> list_tnote = new ArrayList<t_note>();
+    static JPanel err = new JPanel();
+
     public void loaddata()
     {
         try
@@ -48,8 +52,7 @@ public class controller_t_note {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -100,8 +103,7 @@ public class controller_t_note {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -153,8 +155,7 @@ public class controller_t_note {
             transformer.transform(source, result);
         }
         catch (Exception e){
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -181,8 +182,7 @@ public class controller_t_note {
 
         }
         catch (Exception e){
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
