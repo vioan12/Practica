@@ -8,6 +8,8 @@ package javaapplication_practica;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -21,12 +23,13 @@ public class JavaApplication_Practica {
      * @param args the command line arguments
      */
     public static database_management db = new database_management();
+
     
     public static void main(String[] args) {
         ButtonFrame frm = new ButtonFrame("List of Buttons");
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        frm.setSize( 500, 300 );
-        //frm.setResizable(false);
+        frm.setSize( 380, 220 );
+        frm.setResizable(false);
         frm.setLocation(dim.width/2-frm.getSize().width/2, dim.height/2-frm.getSize().height/2);
         frm.setVisible( true );
     }
