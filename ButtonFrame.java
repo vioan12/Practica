@@ -155,7 +155,6 @@ public class ButtonFrame extends JFrame implements ActionListener{
             t_profesori.loaddata();
             t_profesormaterie.loaddata();
             
-            pMeasure.setLayout(new BoxLayout(pMeasure, BoxLayout.Y_AXIS));
             add(l1);
             add( b1 );
             add( b2 );
