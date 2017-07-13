@@ -1,0 +1,9 @@
+(1, 'Taclit', 'Nadia', '0774853704', 'Universitatea din Craiova'),
+(2, 'Voinea', 'Vasile', '0741568434', 'Universitatea Babes-Bolyai'),
+(3, 'Iacobescu', 'Victor', '0769199740', 'Universitatea din Craiova'),
+(4, 'Dumbravescu', 'Marius Alin', '0726143811', 'Universitatea din Craiova'),
+(5, 'Popescu', 'Doru Anastasiu', '0756659224', 'Universitatea din Bucuresti'),
+(6, 'Parvu', 'Gianina', '0756333951', 'Universitatea \"Alexandru Ioan Cuza\" din Iasi'),
+(7, 'Balaban', 'Dumitru', '0742328178', '?'),
+(8, 'Mic', 'Emilia', '0769955294', 'Universitatea de Vest din Timisoara'),
+(9, 'Popescu', 'Mirela', '0732009663', 'Universitatea din Craiova');
