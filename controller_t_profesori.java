@@ -13,6 +13,8 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -31,7 +33,9 @@ import org.w3c.dom.NodeList;
  */
 public class controller_t_profesori {
     
-protected ArrayList<t_profesori> list_tprofesori = new ArrayList<t_profesori>();
+    protected ArrayList<t_profesori> list_tprofesori = new ArrayList<t_profesori>();
+    static JPanel err = new JPanel();
+
     public void loaddata()
     {
         try
@@ -49,8 +53,7 @@ protected ArrayList<t_profesori> list_tprofesori = new ArrayList<t_profesori>();
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -108,8 +111,7 @@ protected ArrayList<t_profesori> list_tprofesori = new ArrayList<t_profesori>();
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -171,8 +173,7 @@ protected ArrayList<t_profesori> list_tprofesori = new ArrayList<t_profesori>();
             transformer.transform(source, result);
         }
         catch (Exception e){
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -199,8 +200,7 @@ protected ArrayList<t_profesori> list_tprofesori = new ArrayList<t_profesori>();
 
         }
         catch (Exception e){
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
