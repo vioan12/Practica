@@ -21,6 +21,8 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.*;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -29,6 +31,7 @@ import java.io.*;
 public class controller_t_elevi {
     
     protected ArrayList<t_elevi> list_televi = new ArrayList<t_elevi>();
+    static JPanel err = new JPanel();
     public void loaddata()
     {
         try
@@ -46,8 +49,7 @@ public class controller_t_elevi {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -105,8 +107,7 @@ public class controller_t_elevi {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -168,8 +169,7 @@ public class controller_t_elevi {
             transformer.transform(source, result);
         }
         catch (Exception e){
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -196,8 +196,7 @@ public class controller_t_elevi {
 
         }
         catch (Exception e){
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
