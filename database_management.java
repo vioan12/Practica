@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,6 +20,8 @@ public class database_management {
     private String myDriver = "org.gjt.mm.mysql.Driver";
     private String myUrl = "jdbc:mysql://localhost:3306/practica";
     private Statement st;
+    static JPanel err = new JPanel();
+
     
     public database_management(){
         try{
@@ -29,8 +33,7 @@ public class database_management {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -43,8 +46,7 @@ public class database_management {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
           return null;          
         }
     }
@@ -58,8 +60,7 @@ public class database_management {
         }
         catch (Exception e)
         {
-          System.err.println("Got an exception! ");
-          System.err.println(e.getMessage());
+          JOptionPane.showMessageDialog(err, e , "Got an exception! ", JOptionPane.ERROR_MESSAGE);
           return 0;          
         }
     }
